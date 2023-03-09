@@ -15,4 +15,18 @@ export default class Colaboradores extends BaseController {
         }
     }
 
+    async postColaborador(req, res) {
+        try {
+            let body = req.body;
+            //console.log(body)
+            let response = await ColaboradoresRepository.postColaborador(body)
+            return super.responseSuccess(req, res, response)
+        } catch (error) {
+            return super.responseError(req, res, error)
+
+        }
+    }
+
+    
+
 }

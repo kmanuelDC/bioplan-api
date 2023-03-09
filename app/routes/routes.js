@@ -16,4 +16,14 @@ const colaboradores = new Colaboradores();
 routes.get(`/bioplan/colaboradores/get/all`,colaboradores.getColaboradores);
 
 
+
+
+
+
+
+
+
+routes.post(`/bioplan/colaboradores/new/colaborador`,colaboradores.postColaborador);
+
+
 export default routes;
