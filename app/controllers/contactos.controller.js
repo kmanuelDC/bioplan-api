@@ -1,52 +1,52 @@
 import { BaseController } from "../core/base.controller.js";
-import ColaboradoresRepository from "../repository/colaboradores.respository.js";
+import ContactosRepository from "../repository/contactos.respository.js";
 
-export default class Colaboradores extends BaseController {
+export default class Contactos extends BaseController {
   constructor() {
     super();
   }
 
-  async getColaboradores(req, res) {
+  async getContactos(req, res) {
     try {
-      let response = await ColaboradoresRepository.getColaboradores();
+      let response = await ContactosRepository.getContactos();
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async getColaboradoById(req, res) {
+  async getContactoById(req, res) {
     try {
       const id = req.params.id;
-      let response = await ColaboradoresRepository.getColaboradoById(id);
+      let response = await ContactosRepository.getContactoById(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
 
-  async postColaborador(req, res) {
+  async postContacto(req, res) {
     try {
       const body = req.body;
-      let response = await ColaboradoresRepository.postColaborador(body);
+      let response = await ContactosRepository.postContacto(body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async putColaboradorById(req, res) {
+  async putContactoById(req, res) {
     try {
       const id = req.params.id;
       const body = req.body;
-      let response = await ColaboradoresRepository.putColaboradorById(id, body);
+      let response = await CoontactosRepository.putContactoById(id, body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async deleteColaboradorById(req, res) {
+  async deleteContactoById(req, res) {
     try {
       const id = req.params.id;
-      let response = await ColaboradoresRepository.deleteColaboradorById(id);
+      let response = await ContactosRepository.deleteContactoById(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
