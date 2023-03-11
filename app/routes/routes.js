@@ -4,7 +4,6 @@ import Convocatorias from "../controllers/convocatorias.controller.js";
 import Noticias from "../controllers/noticias.controller.js";
 import Proyectos from "../controllers/proyectos.controller.js";
 import Contactos from "../controllers/contactos.controller.js";
-import Noticias from "../controllers/noticias.controller.js";
 
 const routes = Router();
 

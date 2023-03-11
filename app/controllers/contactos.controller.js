@@ -1,5 +1,5 @@
 import { BaseController } from "../core/base.controller.js";
-import ContactosRepository from "../repository/contactos.respository.js";
+import ContactosRepository from "../repository/contactos.repository.js";
 
 export default class Contactos extends BaseController {
   constructor() {
