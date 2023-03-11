@@ -1,52 +1,50 @@
 import { BaseController } from "../core/base.controller.js";
-import ColaboradoresRepository from "../repository/colaboradores.respository.js";
+import ConvocatoriasRepository from "../repository/convocatorias.repository.js";
 
-export default class Colaboradores extends BaseController {
+export default class Convocatorias extends BaseController {
   constructor() {
     super();
   }
-
-  async getColaboradores(req, res) {
+  async getConvocatorias(req, res) {
     try {
-      let response = await ColaboradoresRepository.getColaboradores();
+      const response = await ConvocatoriasRepository.getConvocatorias();
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async getColaboradoById(req, res) {
+  async getConvocatoriasById(req, res) {
     try {
       const id = req.params.id;
-      let response = await ColaboradoresRepository.getColaboradoById(id);
+      const response = await ConvocatoriasRepository.getConvocatoriasById(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-
-  async postColaborador(req, res) {
+  async postConvocatorias(req, res) {
     try {
       const body = req.body;
-      let response = await ColaboradoresRepository.postColaborador(body);
+      const response = await ConvocatoriasRepository.postConvocatorias(body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async putColaboradorById(req, res) {
+  async putConvocatorias(req, res) {
     try {
-      const id = req.params.id;
       const body = req.body;
-      let response = await ColaboradoresRepository.putColaboradorById(id, body);
+      const id = req.params.id;
+      const response = await ConvocatoriasRepository.putConvocatorias(id, body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async deleteColaboradorById(req, res) {
+  async deleteConvocatorias(req, res) {
     try {
       const id = req.params.id;
-      let response = await ColaboradoresRepository.deleteColaboradorById(id);
+      const response = await ConvocatoriasRepository.deleteConvocatorias(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
