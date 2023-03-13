@@ -15,8 +15,8 @@ const ContactosQuerys = {
       `update contactos set 
       id = '${item.id}',
       contacto_nombre = '${item.contacto_nombre}',
-      contacto_detalle = '${item.contacto_detalle}',
-      ciudad = '${item.ciudad}'
+      email = '${item.email}',
+      mensaje = '${item.mensaje}'
   
       where contactos.id=${id}
       `,
@@ -26,4 +26,3 @@ const ContactosQuerys = {
   };
   
   export default ContactosQuerys;
-  

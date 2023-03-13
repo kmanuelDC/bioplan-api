@@ -1,52 +1,53 @@
 import { BaseController } from "../core/base.controller.js";
-import ContactosRepository from "../repository/contactos.repository.js";
+import ProyectosRepository from "../repository/proyectos.repository.js";
 
-export default class Contactos extends BaseController {
+export default class Proyectos extends BaseController {
   constructor() {
     super();
   }
 
-  async getContactos(req, res) {
+  async getProyectos(req, res) {
     try {
-      let response = await ContactosRepository.getContactos();
+      const response = await ProyectosRepository.getProyectos();
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async getContactoById(req, res) {
+  async getProyectosById(req, res) {
     try {
       const id = req.params.id;
-      let response = await ContactosRepository.getContactoById(id);
+      const response = await ProyectosRepository.getProyectosById(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
 
-  async postContacto(req, res) {
+  async postProyectos(req, res) {
     try {
       const body = req.body;
-      let response = await ContactosRepository.postContacto(body);
+      const response = await ProyectosRepository.postProyectos(body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async putContactoById(req, res) {
+
+  async putProyectos(req, res) {
     try {
-      const id = req.params.id;
       const body = req.body;
-      let response = await CoontactosRepository.putContactoById(id, body);
+      const id = req.params.id;
+      const response = await ProyectosRepository.putProyectos(id, body);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
     }
   }
-  async deleteContactoById(req, res) {
+  async deleteProyectos(req, res) {
     try {
       const id = req.params.id;
-      let response = await ContactosRepository.deleteContactoById(id);
+      const response = await ProyectosRepository.deleteProyectos(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
