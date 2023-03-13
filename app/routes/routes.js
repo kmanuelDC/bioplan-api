@@ -4,6 +4,8 @@ import Convocatorias from "../controllers/convocatorias.controller.js";
 import Noticias from "../controllers/noticias.controller.js";
 import Proyectos from "../controllers/proyectos.controller.js";
 import Contactos from "../controllers/contactos.controller.js";
+import Cargo from "../controllers/cargo.controller.js";
+import Area from "../controllers/area.controller.js";
 
 const routes = Router();
 
@@ -12,6 +14,8 @@ const noticias = new Noticias();
 const convocatorias = new Convocatorias();
 const proyectos = new Proyectos();
 const contactos = new Contactos();
+const cargo = new Cargo();
+const area = new Area();
 //----------------------------------------------------------------//
 // ╔═╗╔═╗╔╦╗
 // ║ ╦║╣  ║
@@ -42,6 +46,14 @@ routes.get(`/bioplan/proyectos/get/:id`, proyectos.getProyectosById);
 routes.get(`/bioplan/contactos/get/all`, contactos.getContactos);
 routes.get(`/bioplan/contactos/get/:id`, contactos.getContactoById);
 
+// ---> cargo
+routes.get(`/bioplan/cargo/get/all`, cargo.getCargo);
+routes.get(`/bioplan/cargo/get/:id`, cargo.getCargoById);
+
+// ---> area
+routes.get(`/bioplan/area/get/all`, area.getArea);
+routes.get(`/bioplan/area/get/:id`, area.getAreaById);
+
 // POST
 // ---> colaboradores
 routes.post(
@@ -64,6 +76,12 @@ routes.post(`/bioplan/proyectos/post/proyecto`, proyectos.postProyectos);
 // ---> contactos
 routes.post(`/bioplan/contactos/post/contacto`, contactos.postContacto);
 
+// ---> cargo
+routes.post(`/bioplan/cargo/post/cargo`, cargo.postCargo);
+
+// ---> area
+routes.post(`/bioplan/area/post/area`, area.postArea);
+
 // UPDATE
 // ---> colaboradores
 routes.put(`/bioplan/colaboradores/put/:id`, colaboradores.putColaboradorById);
@@ -79,6 +97,12 @@ routes.put(`/bioplan/proyectos/put/:id`, proyectos.putProyectos);
 
 // ---> contactos
 routes.put(`/bioplan/colaboradores/put/:id`, contactos.putContactoById);
+
+// ---> cargo
+routes.put(`/bioplan/cargo/put/:id`, cargo.putCargo);
+
+// ---> area
+routes.put(`/bioplan/area/put/:id`, area.putArea);
 
 // DELETE
 // ---> colaboradores
@@ -101,5 +125,11 @@ routes.delete(`/bioplan/proyectos/delete/:id`, proyectos.deleteProyectos);
 
 // ---> contactos
 routes.put(`/bioplan/contactos/delete/:id`, contactos.putContactoById);
+
+// ---> cargo
+routes.delete(`/bioplan/cargo/delete/:id`, cargo.deleteCargo);
+
+// ---> area
+routes.delete(`/bioplan/area/delete/:id`, area.deleteArea);
 
 export default routes;
