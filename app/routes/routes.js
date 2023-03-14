@@ -102,18 +102,6 @@ routes.delete(`/bioplan/proyectos/delete/:id`, proyectos.deleteProyectos);
 // ---> contactos
 routes.put(`/bioplan/contactos/delete/:id`, contactos.putContactoById);
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-routes.post(`/bioplan/colaboradores/new/colaborador`,colaboradores.postColaborador);
-
 
 export default routes;
-=======
-export default routes;
->>>>>>> 96223513ecfdc9233cb659ccf14464db6129ef90
+
