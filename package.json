@@ -18,5 +18,8 @@
     "moment": "^2.29.4",
     "pg-pool": "^3.5.2",
     "pool": "^0.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
