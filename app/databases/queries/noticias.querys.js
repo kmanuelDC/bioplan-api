@@ -15,8 +15,6 @@ const NoticiasQuerys = {
           titulo='${item.titulo}',
           autor='${item.autor}',
           noticias_detalle='${item.noticias_detalle}'
-          
-          
           WHERE noticias.id = ${id}`,
 
   deleteNoticiasById: (id) => `DELETE FROM noticias WHERE noticias.id = ${id}`,

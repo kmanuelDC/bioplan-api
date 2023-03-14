@@ -13,7 +13,6 @@ const ContactosQuerys = {
   
     putContactos: (id, item) =>
       `update contactos set 
-      id = '${item.id}',
       contacto_nombre = '${item.contacto_nombre}',
       email = '${item.email}',
       mensaje = '${item.mensaje}'
@@ -22,7 +21,7 @@ const ContactosQuerys = {
       `,
   
     deleteContactos: (id) =>
-      `delete from contactos where contactos.id=${id}`,
+      `update  contactos set tiempo_eliminacion = now() where contactos.id=${id}`,
   };
   
   export default ContactosQuerys;
