@@ -1,6 +1,6 @@
 const ColaboradoresQuerys = {
   getColaboradores: () => `select * from colaboradores;`,
-  getColaboradoById: (id) =>
+  getColaboradorById: (id) =>
     `select * from colaboradores where colaboradores.id = ${id}`,
   postColaborador: (colaborador) => `INSERT INTO colaboradores (
       id, id_cargo, nombres, ap_paterno, ap_materno, dni, carnet_ext, direccion, fecha)

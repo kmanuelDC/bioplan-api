@@ -12,9 +12,9 @@ export default class ColaboradoresRepository{
         return data?.rows;
     }
 
-    static async getColaboradoById (id){
+    static async getColaboradorById (id){
         const errorMessage = (error) => { console.log(`[!] Error (Crew repository: getColaboradores):`, error.message); throw new Error(error.message) };
-        const data = await pool.query(ColaboradoresQuerys.getColaboradoById(id));
+        const data = await pool.query(ColaboradoresQuerys.getColaboradorById(id));
         console.log (data)
         return data?.rows;
     }

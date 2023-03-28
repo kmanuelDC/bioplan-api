@@ -25,7 +25,7 @@ const area = new Area();
 // GET
 // ---> colaboradores
 routes.get(`/bioplan/colaboradores/get/all`, colaboradores.getColaboradores);
-routes.get(`/bioplan/colaboradores/get/:id`, colaboradores.getColaboradoById);
+routes.get(`/bioplan/colaboradores/get/:id`, colaboradores.getColaboradorById);
 
 // ---> noticias
 routes.get(`/bioplan/noticias/get/all`, noticias.getNoticias);

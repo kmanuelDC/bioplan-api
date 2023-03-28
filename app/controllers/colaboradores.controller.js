@@ -14,10 +14,10 @@ export default class Colaboradores extends BaseController {
       return super.responseError(req, res, error);
     }
   }
-  async getColaboradoById(req, res) {
+  async getColaboradorById(req, res) {
     try {
       const id = req.params.id;
-      let response = await ColaboradoresRepository.getColaboradoById(id);
+      let response = await ColaboradoresRepository.getColaboradorById(id);
       return super.responseSuccess(req, res, response);
     } catch (error) {
       return super.responseError(req, res, error);
