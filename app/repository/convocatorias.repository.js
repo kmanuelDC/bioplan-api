@@ -3,63 +3,54 @@ import ConvocatoriasQuerys from "../databases/queries/convocatorias.querys.js";
 
 export default class ConvocatoriasRepository {
   static async getConvocatorias() {
-    const errorMessage = (error) => {
-      console.log(
-        `[!] Error (Crew repository: getConvocatorias):`,
-        error.message
-      );
-      throw new Error(error.message);
-    };
-    const data = await pool.query(ConvocatoriasQuerys.getConvocatorias());
-    return data?.rows;
+    try {
+      const data = await pool.query(ConvocatoriasQuerys.getConvocatorias());
+      return data?.rows;
+    } catch (error) {
+      return error.message;
+    }
   }
 
   static async getConvocatoriasById(id) {
-    const errorMessage = (error) => {
-      console.log(
-        `[!] Error (Crew repository: getConvocatoriasById):`,
-        error.message
+    try {
+      const data = await pool.query(
+        ConvocatoriasQuerys.getConvocatoriasById(id)
       );
-      throw new Error(error.message);
-    };
-    const data = await pool.query(ConvocatoriasQuerys.getConvocatoriasById(id));
-    return data?.rows;
+      return data?.rows;
+    } catch (error) {
+      return error.message;
+    }
   }
   static async postConvocatorias(body) {
-    const errorMessage = (error) => {
-      console.log(
-        `[!] Error (Crew repository: getConvocatoriasById):`,
-        error.message
+    try {
+      const data = await pool.query(
+        ConvocatoriasQuerys.postConvocatorias(body)
       );
-      throw new Error(error.message);
-    };
-    const data = await pool.query(ConvocatoriasQuerys.postConvocatorias(body));
-    return data?.rows;
+      return data?.rows;
+    } catch (error) {
+      return error.message;
+    }
   }
 
   static async putConvocatorias(id, body) {
-    const errorMessage = (error) => {
-      console.log(
-        `[!] Error (Crew repository: getConvocatoriasById):`,
-        error.message
+    try {
+      const data = await pool.query(
+        ConvocatoriasQuerys.putConvocatorias(id, body)
       );
-      throw new Error(error.message);
-    };
-    const data = await pool.query(
-      ConvocatoriasQuerys.putConvocatorias(id, body)
-    );
-    return data?.rows;
+      return data?.rows;
+    } catch (error) {
+      return error.message;
+    }
   }
 
   static async deleteConvocatorias(id) {
-    const errorMessage = (error) => {
-      console.log(
-        `[!] Error (Crew repository: getConvocatoriasById):`,
-        error.message
+    try {
+      const data = await pool.query(
+        ConvocatoriasQuerys.deleteConvocatorias(id)
       );
-      throw new Error(error.message);
-    };
-    const data = await pool.query(ConvocatoriasQuerys.deleteConvocatorias(id));
-    return data?.rows;
+      return data?.rows;
+    } catch (error) {
+      return error.message;
+    }
   }
 }
